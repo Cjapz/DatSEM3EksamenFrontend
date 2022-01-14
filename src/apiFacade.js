@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/SP1_war_exploded";
+const URL = "http://165.232.118.125:8081/startcode/";
 
 function handleHttpErrors(res) {
   if (!res.ok) {

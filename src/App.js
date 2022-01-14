@@ -11,7 +11,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./componet/Header";
 import Home from "./componet/Home";
-import Products from "./componet/Products";
 import AddBook from "./componet/AddBook";
 import NoMatch from "./componet/NoMatch";
 import FindBook from "./componet/FindBook";
@@ -19,9 +18,12 @@ import LogIn from "./componet/login/LogIn";
 import facade from "./apiFacade";
 import LoggedIn from "./componet/login/LoggedIn";
 import Owners from "./componet/Owners";
-import Harbour from "./componet/Harbour";
 import Details from "./componet/details";
 import CreateBoat from "./CreateBoat";
+import Races from "./componet/Races";
+import Drivers from "./componet/Drivers";
+import Cars from "./componet/Cars";
+import CreateRace from "./CreateRace";
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -41,8 +43,8 @@ function App(props) {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/harbours">
-          <Harbour details={props.Details} />
+        <Route path="/races">
+          <Races Cars={props.Cars} Drivers={props.Drivers} />
         </Route>
         <Route path="/add-book">
           <AddBook bookFacade={props.bookFacade} />
@@ -53,10 +55,10 @@ function App(props) {
         <Route path="/owners">
           <Owners />
         </Route>
-        <Route path="/create-boat">
-          <CreateBoat />
+        <Route path="/create-race">
+          <CreateRace />
         </Route>
-        <route path="/login">
+        <Route path="/login">
           <div>
             {!loggedIn ? (
               <LogIn login={login} />
@@ -67,7 +69,7 @@ function App(props) {
               </div>
             )}
           </div>
-        </route>
+        </Route>
         <Route path="*">
           <NoMatch />
         </Route>

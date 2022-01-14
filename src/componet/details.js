@@ -5,32 +5,33 @@ import facade from "../apiFacade";
 const Details = () => {
   let { name } = useParams();
 
-  const [boat, setBoat] = useState([]);
+  const [car, setCar] = useState([]);
 
   useEffect(() => {
     fetch(
-      "http://localhost:8080/SP1_war_exploded/api/boat/getboatbyharbour/" +
+      "http://localhost:8080/SP1_war_exploded/api/car/getcarbyrace/" +
         name,
       facade.makeOptions("GET", true)
     )
       .then((response) => response.json())
       .then((data) => {
-        setBoat(data);
+        setCar(data);
       });
   },[name]);
 
   return (
     <div>
       <div>
-        {boat &&
-          boat.map((boat) => (
+        {car &&
+          car.map((car) => (
             <div>
               <ul>
                 <li>
-                  ID: {boat.id} <br />
-                  Brand: {boat.brand},
-                  Make: {boat.make},
-                  Name: {boat.name}. 
+                  ID: {car.id} <br /> 
+                  Brand: {car.brand},
+                  Make: {car.make},
+                  Year: {car.year},
+                  Name: {car.name}, 
                 </li>
               </ul>
             </div>

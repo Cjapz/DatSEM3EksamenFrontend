@@ -23,8 +23,8 @@ function Header() {
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/harbours">
-            Harbours
+          <NavLink activeClassName="active" to="/races">
+            Races
           </NavLink>
         </li>
         <li>
@@ -43,8 +43,8 @@ function Header() {
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/create-boat">
-            Create Boat
+          <NavLink activeClassName="active" to="/create-race">
+            Create Race
           </NavLink>
         </li>
       </ul>
