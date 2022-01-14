@@ -9,7 +9,7 @@ import facade from "../apiFacade";
 
 
 const Races = () => {
-  const [race, setRace] = useState([]);
+  const [races, setRaces] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -18,7 +18,7 @@ const Races = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setRace(data);
+        setRaces(data);
       });
   },[]);
 
@@ -26,12 +26,11 @@ const Races = () => {
     <div>
       <h1>Kommende Ræs</h1>
       <ul>
-        {race &&
-          race.map((race) => (
+        {races &&
+          races.map((race) => (
           <li>
                 'Name: {race.name}, Location: {race.location}, Date: {race.date}, Time {race.time}, 
                 <Link to={`/races/${race.name}`}>Cars</Link>{" "} 
-                <Link to={`/races/${race.id}`}>Drivers</Link>{" "}
                 </li>
           ))}
         </ul>
@@ -40,9 +39,6 @@ const Races = () => {
       <Switch>
         <Route path={"/races/:name"}>
           <Cars/>
-        </Route>
-        <Route> path={"/races/:id"}
-          <Drivers/>  
         </Route>
       </Switch>
     </div>

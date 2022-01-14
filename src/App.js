@@ -44,7 +44,7 @@ function App(props) {
           <Home />
         </Route>
         <Route path="/races">
-          <Races Cars={props.Cars} Drivers={props.Drivers} />
+          <Races Cars={props.Cars}/>
         </Route>
         <Route path="/add-book">
           <AddBook bookFacade={props.bookFacade} />

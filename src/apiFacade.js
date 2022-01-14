@@ -1,4 +1,4 @@
-const URL = "http://165.232.118.125:8081/startcode/";
+const URL = "http://165.232.118.125:8081/startcode";
 
 function handleHttpErrors(res) {
   if (!res.ok) {

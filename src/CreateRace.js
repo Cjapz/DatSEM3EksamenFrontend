@@ -8,7 +8,7 @@ const CreateRace = () => {
   const createRace = (evt) => {
     evt.preventDefault();
     fetch(
-        "http://165.232.118.125:8081/startcode/api/race/createrace" ,
+        "http://165.232.118.125:8081/startcode/api/race/createrace",
         facade.makeOptions("POST", true,race)
       )
         .then((response) => response.json())
